@@ -13,6 +13,8 @@ const primaryButton = document.getElementById('primaryButton');
 const secondaryButton = document.getElementById('secondaryButton');
 
 let evasiveAttempts = 0;
+let canMove = true;
+
 const evasiveWarnings = [
   'Are you sure?',
   'Linka is watching.',
@@ -87,9 +89,15 @@ function detectButtonApproach(event) {
   const closestY = Math.max(rect.top, Math.min(event.clientY, rect.bottom));
   const distance = Math.hypot(event.clientX - closestX, event.clientY - closestY);
 
-  if (distance < 95) {
-    moveEvasiveButton();
-  }
+  if (distance < 20 && canMove) {
+  canMove = false;
+
+  moveEvasiveButton();
+
+  setTimeout(() => {
+    canMove = true;
+  }, 500);
+}
 }
 
 primaryButton.addEventListener('click', () => {

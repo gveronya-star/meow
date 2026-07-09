@@ -9,7 +9,8 @@ body {
 
 
 .intro-screen {
-  width: 100%;
+   width: min(1120px, calc(100% - 32px));
+ /* width: 100%;*/
   height: 100vh;
   
   padding: 40px;

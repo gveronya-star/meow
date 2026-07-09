@@ -245,8 +245,12 @@ h1 {
 
 .visual-panel {
   position: relative;
-  min-height: clamp(300px, 50vh, 500px);
-/*  min-height: 500px;*/
+
+    min-height: 0;
+  height: 100%;
+  
+/*  min-height: clamp(300px, 50vh, 500px);
+  min-height: 500px;*/
   display: grid;
   place-items: center;
 }

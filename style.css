@@ -53,6 +53,9 @@ body::before {
 
 .mission-card {
   position: relative;
+  
+  height: 80%;
+  
   overflow: hidden;
   border: 1px solid rgba(214, 155, 45, 0.26);
   border-radius: 34px;
@@ -222,7 +225,7 @@ h1 {
 
 
 .evasive-button.floating {
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   margin: 0;
 

@@ -86,7 +86,11 @@ box-sizing: border-box;
   flex-wrap: wrap;
   gap: 10px 18px;
   width: fit-content;
-  margin-bottom: 30px;
+
+margin-bottom: clamp(16px, 2vmin, 30px);
+  
+  /*margin-bottom: 30px;*/
+  
   padding: 10px 14px;
   border: 1px solid rgba(214, 155, 45, 0.36);
   border-radius: 999px;
@@ -119,10 +123,14 @@ box-sizing: border-box;
 }
 
 h1 {
-  margin: 0 0 24px;
+  
+margin: 0 0 clamp(14px, 2vmin, 24px);
+  
+  /*margin: 0 0 24px;*/
+  
   color: #fff7e7;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.35rem, 6vw, 5.2rem);
+  font-size: clamp(2.35rem, 6vmin, 5.2rem);
   line-height: 0.95;
   text-shadow: 0 0 30px rgba(214, 155, 45, 0.24);
 }
@@ -131,7 +139,9 @@ h1 {
   max-width: 63ch;
   margin: 0 0 15px;
   color: #d9d1c1;
-  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  
+  font-size: clamp(1rem, 1.6vmin, 1.12rem);
+  
   line-height: 1.75;
 }
 
@@ -439,36 +449,4 @@ footer {
 
 }
 
-@media (max-height: 900px) {
 
-  .mission-card {
-    padding: 20px;
-  }
-
-  .hero-grid {
-    gap: 24px;
-  }
-
-  h1 {
-    font-size: clamp(2rem, 4vh, 3.5rem);
-  }
-
-  .mission-text {
-    font-size: 0.95rem;
-    line-height: 1.55;
-  }
-
-  .cat-face {
-    width: min(60vw, 300px);
-    height: 320px;
-  }
-
-  .classified-label {
-    margin-bottom: 18px;
-  }
-
-  .button-row {
-    gap: 12px;
-  }
-
-}

@@ -43,11 +43,14 @@ body::before {
 
 .page-shell {
   width: min(1120px, calc(100% - 32px));
-  min-height: 100vh;
+  height: 100vh;
+  box-sizing: border-box;
+
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   padding: 34px 0 24px;
 }
 

@@ -31,7 +31,7 @@ function showStatus(message) {
 
    clearTimeout(statusTimeout);
 
-  setTimeout(() => {
+   statusTimeout = setTimeout(() => {
     statusMessage.classList.remove('active');
   }, 1500);
 }

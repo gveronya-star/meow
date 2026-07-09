@@ -434,7 +434,41 @@ footer {
     padding: 16px 20px;
     font-size: 0.9rem;
       
+    }
+
+
 }
 
+@media (max-height: 900px) {
+
+  .mission-card {
+    padding: 20px;
+  }
+
+  .hero-grid {
+    gap: 24px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4vh, 3.5rem);
+  }
+
+  .mission-text {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .cat-face {
+    width: min(60vw, 300px);
+    height: 320px;
+  }
+
+  .classified-label {
+    margin-bottom: 18px;
+  }
+
+  .button-row {
+    gap: 12px;
+  }
 
 }

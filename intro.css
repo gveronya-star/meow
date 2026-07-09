@@ -10,8 +10,10 @@ body {
 
 
 .intro-screen {
+  min-height: 100vh;
   display: flex;
   padding: 40px;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -95,17 +97,18 @@ body {
 
 
 .mission-card {
-    flex: 1;
 
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  
   display: flex;
   align-items: center;
   justify-content: center;
   
   position: relative;
-  
   overflow: hidden;
   
-  padding: 60px;
+  padding: clamp(24px, 4vw, 54px);
   
   border: 1px solid rgba(214, 155, 45, 0.26);
   border-radius: 34px;

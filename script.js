@@ -14,6 +14,7 @@ const secondaryButton = document.getElementById('secondaryButton');
 
 let evasiveAttempts = 0;
 let canMove = true;
+let statusTimeout;
 
 const evasiveWarnings = [
   'Are you sure?',
@@ -27,6 +28,8 @@ function showStatus(message) {
   statusMessage.classList.remove('active');
   void statusMessage.offsetWidth;
   statusMessage.classList.add('active');
+
+   clearTimeout(statusTimeout);
 
   setTimeout(() => {
     statusMessage.classList.remove('active');

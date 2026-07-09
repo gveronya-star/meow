@@ -1,10 +1,21 @@
 body {
   margin: 0;
   background:
-    radial-gradient(circle at center, rgba(214,155,45,0.15), transparent 35%),
-    black;
+    radial-gradient(circle at 75% 20%, rgba(214, 155, 45, 0.18), transparent 28rem),
+    radial-gradient(circle at 10% 90%, rgba(214, 155, 45, 0.08), transparent 24rem),
+    linear-gradient(135deg, #020203 0%, #090b0f 55%, #050607 100%);
   color: white;
   font-family: system-ui, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(circle at center, black 0%, transparent 78%);
 }
 
 

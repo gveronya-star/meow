@@ -269,7 +269,12 @@ h1 {
   position: relative;
   width: min(78vw, 360px);
   height: 390px;
-  filter: drop-shadow(0 30px 46px rgba(0,0,0,0.78));
+
+  filter:
+    drop-shadow(0 0 35px rgba(214,155,45,0.35))
+    drop-shadow(0 30px 46px rgba(0,0,0,0.78));
+  
+  /*filter: drop-shadow(0 30px 46px rgba(0,0,0,0.78));*/
   animation: royalFloat 5s ease-in-out infinite;
 }
 
@@ -286,14 +291,14 @@ h1 {
 .cat-ear {
   position: absolute;
   top: 44px;
-  width: 118px;
+  width: 128px;
   height: 128px;
   background: linear-gradient(145deg, #15191f, #050607 70%);
   border: 1px solid rgba(255,255,255,0.05);
 }
 
-.left-ear { left: 38px; transform: rotate(-24deg) skewY(10deg); border-radius: 26px 90px 20px 74px; }
-.right-ear { right: 38px; transform: rotate(24deg) skewY(-10deg); border-radius: 90px 26px 74px 20px; }
+.left-ear { left: 42px; transform: rotate(-10deg) skewY(10deg); border-radius: /*26px 90px 20px 74px*/ 80% 20% 20% 20%;; }
+.right-ear { right: 42px; transform: rotate(10deg) skewY(-10deg); border-radius: /*90px 26px 74px 20px*/ 80% 20% 20% 20%;; }
 
 .fur-shine {
   position: absolute;
@@ -359,7 +364,7 @@ h1 {
 
 .secret-message {
   position: absolute;
-  bottom: -50px;
+  bottom: -20px;
   width: min(340px, 90%);
   padding: 16px 18px;
   border: 1px solid rgba(214,155,45,0.35);

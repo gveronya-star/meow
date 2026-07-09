@@ -242,7 +242,8 @@ h1 {
 
 .visual-panel {
   position: relative;
-  min-height: 500px;
+  min-height: clamp(300px, 50vh, 500px);
+/*  min-height: 500px;*/
   display: grid;
   place-items: center;
 }
@@ -386,9 +387,18 @@ footer {
   } 
 }
 
-@media (max-width: 820px) {
-  .hero-grid { grid-template-columns: 1fr; }
-  .visual-panel { min-height: 430px; order: -1; }
+@media (max-width: /*820px*/ 750px) {
+/*  .hero-grid { grid-template-columns: 1fr; }
+  .visual-panel { min-height: 430px; order: -1; }*/
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-panel {
+    min-height: 300px;
+  }
+  
   .cat-face { width: min(82vw, 310px); height: 340px; }
   .cat-head { inset: 70px 18px 4px; }
   .eye { top: 92px; width: 76px; height: 88px; }

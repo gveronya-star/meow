@@ -10,7 +10,7 @@ body {
 
 
 .intro-screen {
-  height: 100vh;
+  height: 100%;
   display: flex;
   padding: 40px;
   box-sizing: border-box;

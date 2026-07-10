@@ -183,7 +183,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 
   text-align: center;
 
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.03em;
 
   opacity: 0;
@@ -767,16 +767,42 @@ footer {
 
 @media (max-width: 750px) {
   
-  /* Расправляем рамку, чтобы она росла вниз и не прятала текст */
+  /* Наша карточка растет вниз */
   .mission-card {
     height: auto !important;
     overflow: visible !important;
     padding: 24px 16px !important;
   }
 
-  /* Разрешаем самой странице скроллиться, если контент длинный */
+  /* Оболочка страницы */
   .page-shell {
     height: auto !important;
     padding: 24px 0 !important;
+  }
+
+  /* ВРУБАЕМ ЦЕНТРИРОВАНИЕ ВСЕГО КОНТЕНТА: */
+  
+  .copy-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Центрирует элементы */
+    text-align: center !important;  /* Центрирует сам текст внутри строк */
+  }
+
+  .classified-label {
+    margin: 0 auto clamp(16px, 2vmin, 30px) !important; /* Центрируем плашку CLASSIFIED */
+    justify-content: center !important;
+  }
+
+  .button-row {
+    justify-content: center !important; /* Центрируем кнопки */
+    width: 100% !important;
+  }
+
+  /* Укрощаем буквы RFIS и на первой странице тоже, чтобы не вылезали */
+  .mission-card::after {
+    font-size: 5.5rem !important;
+    right: 5px !important;
+    bottom: 5px !important;
   }
 }

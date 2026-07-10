@@ -336,7 +336,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
   border: 1px solid rgba(214, 155, 45, 0.18);
   border-radius: 50%;
 
-  background: rgba(8, 10, 13, 0.65) ; /* Чёрный фон кнопок с прозрачностью */
+  background: rgba(8, 10, 13, 0.30) ; /* Чёрный фон кнопок с прозрачностью */
   backdrop-filter: blur(8px) ;        /* Размытие под кружком */
   -webkit-backdrop-filter: blur(8px); 
   
@@ -825,7 +825,7 @@ footer {
    БЛОК 2: Спасаем ГОРИЗОНТАЛЬНЫЕ планшеты и низкие ноутбуки
    Сработает, только если экран широкий, но очень низкий по высоте
    ========================================================================== */
-@media (max-height: 780px) and (min-width: 1025px) {
+/*@media (max-height: 780px) and (min-width: 1025px) {
 
 body {
     background-attachment: fixed !important;
@@ -835,11 +835,11 @@ body {
   .page-shell {
     height: 100vh !important;
     min-height: 100vh !important;
-    padding: 20px 0 12px !important; /* Снизу уменьшили паддинг, чтобы футер влез */
+    padding: 20px 0 12px !important; 
     
     display: flex !important;
     flex-direction: column !important;
-    justify-content: space-between !important; /* Выталкивает футер в самый низ, а карточку держит повыше */
+    justify-content: space-between !important; 
   }
   
   .mission-card {
@@ -862,6 +862,68 @@ body {
   }
   footer {
     padding-top: 16px !important;
+    margin-top: auto !important; 
+  }
+}*/
+/* ==========================================================================
+   БЛОК 2: Спасаем ГОРИЗОНТАЛЬНЫЕ планшеты и низкие ноутбуки
+   ========================================================================== */
+@media (max-height: 780px) and (min-width: 1025px) {
+
+  body {
+    background-attachment: fixed !important;
+    background-size: cover !important;
+  }
+  
+  .page-shell {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    padding: 16px 0 8px !important; /* Еще немного разгрузили внешние отступы */
+    
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+  
+  .mission-card {
+    height: auto !important;
+    min-height: 72vh !important; /* Карточка послушно следует за высотой экрана */
+    padding: 24px 24px !important; /* Чуть меньше паддинги — больше места кнопкам */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    /* overflow остаётся hidden или дефолтным, никаких внутренних скроллбаров! */
+  }
+
+  /* Исправляем казус с h1: уменьшаем нижний маргин, спасая кнопки */
+  h1 {
+    font-size: clamp(1.8rem, 3.5vw, 3.2rem) !important; /* Чуть-чуть аккуратнее шрифт */
+    margin-bottom: 8px !important; /* 🔥 Освободили место */
+  }
+
+  /* Исправляем казус с сеткой: разрешаем ей и её детям безопасно ужиматься */
+  .hero-grid {
+    gap: 20px !important;
+    height: 100% !important;
+    min-height: 0 !important; /* 🔥 Снимает жесткие ограничения на сжатие */
+  }
+  
+  .copy-panel {
+    min-height: 0 !important; /* Чтобы текстовый блок не выталкивал кнопки */
+  }
+
+  /* 🔥 РЕШАЕМ КАЗУС С КНОПКАМИ: убираем жесткие 60px высоты */
+  .mission-button {
+    height: auto !important; /* Разрешаем кнопке уменьшаться */
+    padding: 12px 24px !important; /* Делаем её аккуратной и адаптивной */
+  }
+  
+  .button-row {
+    margin-top: 14px !important; /* Уменьшили отступ над кнопками */
+  }
+
+  footer {
+    padding-top: 12px !important;
     margin-top: auto !important; 
   }
 }

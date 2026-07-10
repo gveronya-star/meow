@@ -175,7 +175,7 @@ body::before {
     width: 100% !important; /* <--- Занимаем честные 100% ширины девайса */
     height: auto !important;
     overflow: visible !important;
-    padding: 40px 16px !important; /* <--- Боковые паддинги создадут ровные аккуратные отступы для всех мобилок */
+    padding: 40px 0px !important; /* <--- Боковые паддинги создадут ровные аккуратные отступы для всех мобилок */
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;

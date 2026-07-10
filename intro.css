@@ -172,7 +172,7 @@ body::before {
 
   /* 2. Позволяем внешнему экрану сжиматься по ширине и убираем жесткие десктопные лимиты */
   .intro-screen {
-    width: calc(100% - 16px) !important; /* <--- Занимаем честные 100% ширины девайса */
+    width: 100% !important; /* <--- Занимаем честные 100% ширины девайса */
     height: auto !important;
     overflow: visible !important;
     padding: 40px 0px !important; /* <--- Боковые паддинги создадут ровные аккуратные отступы для всех мобилок */
@@ -184,7 +184,7 @@ body::before {
 
   /* 3. ИСПРАВЛЕНИЕ: Карточка теперь идеально сжимается и на iPad, и на телефонах */
   .mission-card {
-    width: 100% !important; 
+    width: 94% !important; 
     max-width: 640px !important; /* <--- На планшетах она не будет растягиваться на весь экран, а аккуратно соберется по центру */
     height: auto !important;
     overflow: hidden !important; 

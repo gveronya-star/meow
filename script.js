@@ -20,6 +20,8 @@ const evasiveWarnings = [
   'Are you sure?',
   'Linka is watching.',
   'This decision will be remembered.'
+  'Do not make a mistake.'
+  'Think again'
 ];
 
 function showStatus(message) {
@@ -49,12 +51,22 @@ function trackPupils(event) {
 
     pupil.style.transform = `translate(calc(-50% + ${Math.cos(angle) * distance}px), calc(-50% + ${Math.sin(angle) * distance}px))`;
 
-    if (Math.hypot(distanceX, distanceY) < 180) {
+  /* if (Math.hypot(distanceX, distanceY) < 180) {
       eye.classList.add('is-alert');
       secretMessage.classList.add('visible');
     } else {
       eye.classList.remove('is-alert');
-    }
+    }*/
+    const nearEye = Math.hypot(distanceX, distanceY) < 180;
+
+if (nearEye) {
+  eyes.forEach((e) => e.classList.add('is-alert'));
+  secretMessage.classList.add('visible');
+} else {
+  eyes.forEach((e) => e.classList.remove('is-alert'));
+}
+
+    
   });
 }
 

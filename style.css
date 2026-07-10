@@ -314,7 +314,8 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 .visual-panel {
   position: relative;
 
-    min-height: 0;
+   /* min-height: 0;*/
+  height: 100%;
 
   display: grid;
   place-items: center;
@@ -322,7 +323,8 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 
 .cat-orbit {
   position: relative;
-  width: min(84vw, 430px);
+/*  width: min(84vw, 430px);*/
+  width: min(70vw, 360px);
   aspect-ratio: 1;
   border: 1px solid rgba(214, 155, 45, 0.18);
   border-radius: 50%;
@@ -332,8 +334,13 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 
 .cat-face {
   position: absolute;
-  width: min(78vw, 360px);
-  height: 390px;
+ /* width: min(78vw, 360px);
+  height: 390px;*/
+
+  width: min(65vw, 300px);
+  aspect-ratio: 360 / 390;
+  height: auto;
+  
   filter: drop-shadow(0 30px 46px rgba(0,0,0,0.78));
   animation: royalFloat 5s ease-in-out infinite;
 }

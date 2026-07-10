@@ -51,20 +51,23 @@ function trackPupils(event) {
 
     pupil.style.transform = `translate(calc(-50% + ${Math.cos(angle) * distance}px), calc(-50% + ${Math.sin(angle) * distance}px))`;
 
-  /* if (Math.hypot(distanceX, distanceY) < 180) {
-      eye.classList.add('is-alert');
+// 1. Проверяем расстояние для зрачков (дальний радиус)
+    const nearPupil = Math.hypot(distanceX, distanceY) < 280;
+    if (nearPupil) {
+      eye.classList.add('expand-pupil'); // Добавляем новый класс только для зрачков
+    } else {
+      eye.classList.remove('expand-pupil');
+    }
+
+    // 2. Проверяем расстояние для свечения и сообщения (ближний радиус)
+    const nearEye = Math.hypot(distanceX, distanceY) < 140;
+    if (nearEye) {
+      eyes.forEach((e) => e.classList.add('is-alert'));
       secretMessage.classList.add('visible');
     } else {
-      eye.classList.remove('is-alert');
-    }*/
-    const nearEye = Math.hypot(distanceX, distanceY) < 180;
-
-if (nearEye) {
-  eyes.forEach((e) => e.classList.add('is-alert'));
-  secretMessage.classList.add('visible');
-} else {
-  eyes.forEach((e) => e.classList.remove('is-alert'));
-}
+      eyes.forEach((e) => e.classList.remove('is-alert'));
+      secretMessage.classList.remove('visible');
+    }
 
     
   });

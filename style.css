@@ -259,7 +259,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
   white-space: nowrap;
   color: #e5dccb;
   background: rgba(8, 10, 13, 0.60);
-  border: 5px solid rgba(214, 155, 45, 0.25);
+  border: 1px solid rgba(214, 155, 45, 0.45);
 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -270,7 +270,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 
     box-shadow:
         0 10px 30px rgba(0,0,0,.45),
-        0 0 18px rgba(214,155,45,.08),
+        0 0 18px rgba(214,155,45,.3),
         inset 0 1px 0 rgba(255,255,255,.08);
 
   transition:
@@ -403,7 +403,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 .left-ear { left: 38px; transform: rotate(-24deg) skewY(10deg); border-radius: 26px 90px 20px 74px; }
 .right-ear { right: 38px; transform: rotate(24deg) skewY(-10deg); border-radius: 90px 26px 74px 20px; }*/
 
-.cat-ear {
+/*.cat-ear {
   position:absolute;
 
   top:42px;
@@ -416,7 +416,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 
   border:1px solid rgba(255,255,255,.05);
 
-  /*border-radius: 45% 45% 25% 25%; 50% 50% 30% 30%;*/
+  [[[border-radius: 45% 45% 25% 25%; 50% 50% 30% 30%;]]]
   clip-path: polygon(
     50% 0%,
     100% 85%,
@@ -432,7 +432,42 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 .right-ear {
  right:42px;
  transform:rotate(12deg);
+}*/
+
+
+.cat-ear {
+  position: absolute;
+  top: 68px;            /* Чуть опустили уши ниже для «британской» посадки */
+  width: 90px;          /* Сделали чуть шире у основания */
+  height: 95px;
+  
+  /* Создаем плавную округлую форму кошачьего ушка: */
+  border-radius: 60% 40% 10% 10% / 80% 80% 10% 10%;
+  
+  /* Делаем уши заметными: темная шерсть снаружи и мягкое свечение внутри */
+  background: 
+    radial-gradient(circle at 50% 70%, rgba(214, 155, 45, 0.15) 0%, transparent 60%),
+    linear-gradient(145deg, #1d222b, #090b0e 80%);
+    
+  /* Светлый контур, чтобы уши «оторвались» от темного фона карточки */
+  border: 1px solid rgba(214, 155, 45, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  
+  transition: transform 300ms ease;
 }
+
+.left-ear {
+  left: 25px; /* Сместили ближе к краю */
+  transform: rotate(-28deg) skewX(-5deg); /* Повернули наружу, как у британца */
+  border-radius: 70% 30% 20% 10% / 80% 70% 20% 10%; /* Индивидуальное скругление для левого уха */
+}
+
+.right-ear {
+  right: 25px; /* Сместили ближе к краю */
+  transform: rotate(28deg) skewX(5deg);  /* Повернули наружу в другую сторону */
+  border-radius: 30% 70% 10% 20% / 70% 80% 10% 20%; /* Индивидуальное скругление для правого уха */
+}
+
 
 
 

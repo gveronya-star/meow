@@ -348,7 +348,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
     align-items:center;
     justify-content:center;
 
-    transform: scale(.8);
+    transform: scale(.84);
 }
 
 .cat-face {

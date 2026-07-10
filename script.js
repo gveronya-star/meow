@@ -184,7 +184,7 @@ function showSecretMessage() {
 
   setTimeout(() => {
     secretMessage.classList.remove('visible');
-  }, 2000);
+  }, 2500);
 }
 
 catFace.addEventListener('mouseenter', showSecretMessage);

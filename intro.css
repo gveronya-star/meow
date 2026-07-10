@@ -146,3 +146,28 @@ body::before {
   font-weight: 700;
   letter-spacing: -0.05em;
 }
+
+
+
+/* Этот блок сработает на смартфонах и планшетах */
+@media (max-width: 750px) {
+
+  /* Разрешаем главной оболочке экрана расти вниз и скроллиться */
+  .intro-screen {
+    height: auto !important;
+    overflow: visible !important;
+    padding: 40px 0 !important; /* Добавим аккуратные отступы сверху и снизу */
+  }
+
+  /* Освобождаем саму карточку-рамку, чтобы она подстраивалась под текст */
+  .mission-card {
+    height: auto !important;
+    overflow: visible !important;
+    padding: 30px 16px !important; /* Немного сузим внутренние отступы, чтобы тексту было просторнее */
+  }
+  
+  /* Убираем сдвиг контента вверх на мобилке, чтобы текст не лип к верхнему краю */
+  .intro-content {
+    transform: translateY(0) !important;
+  }
+}

@@ -784,7 +784,7 @@ footer {
   .page-shell,
   .mission-card {
     height: auto !important;
-    overflow: hiddn !important;
+    overflow: hidden !important;
     padding: clamp(20px, 4vw, 40px) 16px !important;
   }
 
@@ -844,8 +844,11 @@ body {
   
   .mission-card {
     height: auto !important;
-    min-height: calc(100vh - 40px) !important;
+    min-height: 70vh !important;
     padding: 30px 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
   }
 
   h1 {
@@ -855,9 +858,10 @@ body {
 
   .hero-grid {
     gap: 24px !important;
+    height: 100% !important;
   }
   footer {
-    padding-top: 8px !important;
+    padding-top: 16px !important;
     margin-top: auto !important; 
   }
 }

@@ -368,7 +368,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
     height:100%;
   
   filter: 
-    drop-shadow(0 0 40px rgba(214, 155, 45, 0.12))
+    drop-shadow(0 0 40px rgba(214, 155, 45, 0.01))
     drop-shadow(0 30px 46px rgba(0,0,0,0.78));
   
   animation: royalFloat 5s ease-in-out infinite;

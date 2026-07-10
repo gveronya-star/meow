@@ -57,7 +57,7 @@ function trackPupils(event) {
     } else {
       eye.classList.remove('is-alert');
     }*/
-    const nearEye = Math.hypot(distanceX, distanceY) < 100;
+    const nearEye = Math.hypot(distanceX, distanceY) < 180;
 
 if (nearEye) {
   eyes.forEach((e) => e.classList.add('is-alert'));

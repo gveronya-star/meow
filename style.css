@@ -241,11 +241,11 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
   min-width: 240px;
   white-space: nowrap;
   color: #e5dccb;
-  background: rgba(8, 10, 13, 0.72);
+  background: rgba(8, 10, 13, 0.50);
   border: 1px solid rgba(214, 155, 45, 0.25);
 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 
   box-shadow:
     0 10px 30px rgba(0,0,0,0.45),

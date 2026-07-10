@@ -675,7 +675,10 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
   height: 24px;
   border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%; /* Форма мягкого треугольника */
   background: #160f0e;  /* Бархатный темно-серый, почти черный нос */
-  box-shadow: inset 0 2px 3px rgba(0,0,0,0.6), 0 1px 2px rgba(255,255,255,0.05);
+  /*box-shadow: inset 0 2px 3px rgba(0,0,0,0.6), 0 1px 2px rgba(255,255,255,0.05);*/
+  box-shadow: 
+    0 -1px 2px rgba(255, 255, 255, 0.12), 
+    0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 

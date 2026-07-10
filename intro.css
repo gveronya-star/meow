@@ -150,15 +150,23 @@ body::before {
 
 
 /* Этот блок сработает на смартфонах и планшетах */
+/* Этот блок сработает на смартфонах и планшетах */
 @media (max-width: 750px) {
 
-  /* 1. Делаем фон всей страницы равномерным и красивым на мобилке */
+  /* 1. ВОЗВРАЩАЕМ ЯНТАРНОЕ СВЕЧЕНИЕ (но делаем его адаптивным для мобилок) */
   body {
-    background: #050607 !important; /* Чистый глубокий темный цвет без растянутых пятен */
+    background:
+      radial-gradient(circle at 50% 15%, rgba(214, 155, 45, 0.15), transparent 60%), /* Свечение сверху по центру */
+      radial-gradient(circle at 10% 85%, rgba(214, 155, 45, 0.06), transparent 50%),  /* Мягкий блик снизу */
+      linear-gradient(135deg, #020203 0%, #090b0f 55%, #050607 100%) !important;
+    background-attachment: fixed !important; /* Важно: фон зафиксирован, он не будет ломаться при скролле! */
   }
+  
+  /* Возвращаем круговую маску для сетки, чтобы она красиво затухала */
   body::before {
-    background-size: 34px 34px !important; /* Уменьшаем сетку, чтобы она не рябила */
-    mask-image: none !important; /* Убираем круговую маску, чтобы сетка шла равномерно по всему экрану */
+    background-size: 40px 40px !important; 
+    mask-image: radial-gradient(circle at center, black 20%, transparent 85%) !important; /* Сетка мягко исчезает к краям */
+    -webkit-mask-image: radial-gradient(circle at center, black 20%, transparent 85%) !important;
   }
 
   /* 2. Разрешаем главной оболочке экрана расти вниз */
@@ -175,16 +183,16 @@ body::before {
   /* 3. Освобождаем саму карточку-рамку */
   .mission-card {
     height: auto !important;
-    overflow: hidden !important; /* Возвращаем hidden, но рамка уже растет сама */
+    overflow: hidden !important; 
     padding: 30px 16px !important;
-    width: calc(100% - 16px) !important; /* Чтобы рамка аккуратно встала по центру экрана */
+    width: calc(100% - 16px) !important; 
     margin: 0 auto !important;
   }
   
   /* 4. Укрощаем гигантский текст RFIS, чтобы он не вылезал за границы */
   .mission-card::after {
-    font-size: 5.5rem !important; /* Уменьшаем размер букв для мобилки */
-    right: 5px !important; /* Пододвигаем поближе */
+    font-size: 5.5rem !important; 
+    right: 5px !important; 
     bottom: 5px !important;
   }
   

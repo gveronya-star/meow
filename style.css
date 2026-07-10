@@ -826,6 +826,11 @@ footer {
    Сработает, только если экран широкий, но очень низкий по высоте
    ========================================================================== */
 @media (max-height: 780px) and (min-width: 1025px) {
+
+body {
+    background-attachment: fixed !important;
+    background-size: cover !important;
+  }
   
   .page-shell {
     height: 100vh !important;
@@ -850,5 +855,9 @@ footer {
 
   .hero-grid {
     gap: 24px !important;
+  }
+  footer {
+    padding-top: 8px !important;
+    margin-top: auto !important; 
   }
 }

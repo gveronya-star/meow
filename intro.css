@@ -175,7 +175,7 @@ body::before {
     width: 100% !important; /* <--- Занимаем честные 100% ширины девайса */
     height: auto !important;
     overflow: visible !important;
-    padding: 40px 0px !important; /* <--- Боковые паддинги создадут ровные аккуратные отступы для всех мобилок */
+    padding: 40px 16px !important; /* <--- Боковые паддинги создадут ровные аккуратные отступы для всех мобилок */
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
@@ -183,19 +183,15 @@ body::before {
   }
 
   /* 3. ИСПРАВЛЕНИЕ: Карточка теперь идеально сжимается и на iPad, и на телефонах */
-/*  .mission-card {
+ .mission-card {
     width: 90% !important; 
     max-width: 640px !important; /* <--- На планшетах она не будет растягиваться на весь экран, а аккуратно соберется по центру */
-  /*  height: auto !important;
+   height: auto !important;
     overflow: hidden !important; 
     padding: clamp(30px, 6vw, 46px) 20px !important; /* <--- Внутренние отступы станут мягче на мелких смартфонах */
-  /*  margin: 0 auto !important;
-  }*/
-.mission-card {
-    height: auto !important;
-    overflow: hiddn !important;
-    padding: clamp(20px, 4vw, 40px) 16px !important;
+  margin: 0 auto !important;
   }
+
   
   
   /* 4. Аккуратный водяной знак RFIS для узких экранов */

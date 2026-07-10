@@ -83,7 +83,7 @@ function trackPupils(event) {
   }
 }
 
-function moveEvasiveButton() {
+/*function moveEvasiveButton() {
   evasiveAttempts += 1;
   const warning = evasiveWarnings[(evasiveAttempts - 1) % evasiveWarnings.length];
   showStatus(warning);
@@ -109,7 +109,46 @@ const nextTop =
   secondaryButton.classList.add('floating');
   secondaryButton.style.left = `${nextLeft}px`;
   secondaryButton.style.top = `${nextTop}px`;
+}*/
+function moveEvasiveButton() {
+  evasiveAttempts += 1;
+  const warning = evasiveWarnings[(evasiveAttempts - 1) % evasiveWarnings.length];
+  showStatus(warning);
+
+  const buttonRect = secondaryButton.getBoundingClientRect();
+  const card = document.querySelector('.mission-card');
+  const cardRect = card.getBoundingClientRect();
+  const padding = 24;
+
+  // По горизонтали всё остается родное и общее:
+  const minLeft = cardRect.left + padding;
+  const maxLeft = cardRect.right - buttonRect.width - padding;
+
+  // Создаем переменные для вертикали
+  let minTop, maxTop;
+
+  // ЕСЛИ ЭТО МОБИЛКА (экран 750px и меньше):
+  if (window.innerWidth <= 750) {
+    minTop = padding; 
+    maxTop = window.innerHeight - buttonRect.height - padding; // прыгает строго в границах экрана смартфона
+  } 
+  // ИНАЧЕ (это компьютер):
+  else {
+    minTop = cardRect.top + padding;
+    maxTop = cardRect.bottom - buttonRect.height - padding; // твой родной расчет строго внутри рамки карточки
+  }
+
+  // Твой стандартный расчет случайных координат:
+  const nextLeft = Math.random() * (maxLeft - minLeft) + minLeft;
+  const nextTop = Math.random() * (maxTop - minTop) + minTop;
+  
+  secondaryButton.classList.add('floating');
+  secondaryButton.style.left = `${nextLeft}px`;
+  secondaryButton.style.top = `${nextTop}px`;
 }
+
+
+
 
 function detectButtonApproach(event) {
   const rect = secondaryButton.getBoundingClientRect();

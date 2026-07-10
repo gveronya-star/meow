@@ -587,11 +587,11 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
   border-radius: 50%;
   background: #020202;
   transform: translate(-50%, -50%);
-  transition: transform 60ms linear, width 200ms ease; /* Плавное расширение */
+  transition: transform 60ms linear, width 500ms ease; /* Плавное расширение */
 }
 
-.eye.is-alert .pupil {
-  width: 70px; /* Зрачок расширяется от удивления/азарта, когда мышь рядом! */
+.eye.expand-pupil .pupil {
+  width: 70px; /* Зрачок стал шире, кот заинтересовался */
 }
 
 

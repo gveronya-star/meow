@@ -827,7 +827,16 @@ footer {
    ========================================================================== */
 @media (max-height: 780px) and (min-width: 1025px) {
   
-  .page-shell,
+  .page-shell {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    padding: 20px 0 12px !important; /* Снизу уменьшили паддинг, чтобы футер влез */
+    
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important; /* Выталкивает футер в самый низ, а карточку держит повыше */
+  }
+  
   .mission-card {
     height: auto !important;
     min-height: calc(100vh - 40px) !important;

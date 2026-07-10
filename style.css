@@ -337,7 +337,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
   width: min(78vw, 360px);
   height: 390px;
 
-transform: scale(0.83);
+transform: scale(0.7);
   
   filter: drop-shadow(0 30px 46px rgba(0,0,0,0.78));
   animation: royalFloat 5s ease-in-out infinite;
@@ -431,7 +431,7 @@ transform: scale(0.83);
 .secret-message {
   position: absolute;
 /*  bottom: 10%;*/
-  top: -20%;
+  top: -10%;
   width: min(340px, 90%);
   padding: 16px 18px;
   border: 1px solid rgba(214,155,45,0.35);

@@ -269,44 +269,26 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 }
 
 .cat-orbit {
-    position: relative;
-
-    width: clamp(260px, 32vmin, 430px);
-    aspect-ratio: 1;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(214,155,45,.18);
-
-    box-shadow:
-        inset 0 0 46px rgba(214,15545,.05),
-        0 0 60px rgba(214,155,45,.09);
+  position: absolute;
+  width: min(84vw, 430px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(214, 155, 45, 0.18);
+  border-radius: 50%;
+  box-shadow: inset 0 0 46px rgba(214, 155, 45, 0.05), 0 0 60px rgba(214, 155, 45, 0.09);
+  animation: slowRotate 18s linear infinite;
 }
-
-
-
 
 .cat-face {
   position: relative;
-  width:84%;
-  aspect-ratio:360/390;
-
+  width: min(78vw, 360px);
+  height: 390px;
   filter: drop-shadow(0 30px 46px rgba(0,0,0,0.78));
   animation: royalFloat 5s ease-in-out infinite;
 }
 
-
-
 .cat-head {
   position: absolute;
- 
- /* inset: 80px 25px 8px;*/
-  inset: 20.5% 6.9% 2%;
-  
+  inset: 80px 25px 8px;
   border-radius: 48% 48% 44% 44% / 42% 42% 56% 56%;
   background:
     radial-gradient(circle at 35% 23%, rgba(255,255,255,0.09), transparent 24%),
@@ -316,22 +298,15 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 
 .cat-ear {
   position: absolute;
-  
-  /*top: 44px;
-  width: 128px;
+  top: 44px;
+  width: 118px;
   height: 128px;
-  */
-  
-width:35.6%;
-aspect-ratio:1;
-top:11.3%;
-  
   background: linear-gradient(145deg, #15191f, #050607 70%);
   border: 1px solid rgba(255,255,255,0.05);
 }
 
-.left-ear { left: 42px; transform: rotate(-10deg) skewY(10deg); border-radius: 26px 90px 20px 74px; }
-.right-ear { right: 42px; transform: rotate(10deg) skewY(-10deg); border-radius: 90px 26px 74px 20px; }
+.left-ear { left: 38px; transform: rotate(-24deg) skewY(10deg); border-radius: 26px 90px 20px 74px; }
+.right-ear { right: 38px; transform: rotate(24deg) skewY(-10deg); border-radius: 90px 26px 74px 20px; }
 
 .fur-shine {
   position: absolute;

@@ -122,6 +122,7 @@ margin-bottom: clamp(16px, 2vmin, 30px);
 
 
 .eyebrow {
+  position: absolute;
   color: var(--amber);
   font-family: Georgia, "Times New Roman", serif;
   letter-spacing: 0.18em;
@@ -129,7 +130,7 @@ margin-bottom: clamp(16px, 2vmin, 30px);
 }
 
 h1 {
-  
+  position: absolute;
 margin: 0 0 clamp(14px, 2vmin, 24px);
   
   /*margin: 0 0 24px;*/
@@ -142,6 +143,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 }
 
 .mission-text {
+  position: absolute;
   max-width: 63ch;
   margin: 0 0 15px;
   color: #d9d1c1;

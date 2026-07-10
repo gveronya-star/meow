@@ -148,28 +148,28 @@ body::before {
 }
 
 
+/* ==========================================================================
+   БЛОК 1: Спасаем телефоны и ВЕРТИКАЛЬНЫЕ планшеты (iPad)
+   Сработает на экранах узких по ширине (до 1024px включительно)
+   ========================================================================== */
+@media (max-width: 1024px) {
 
-/* Этот блок сработает на смартфонах и планшетах */
-/* Этот блок сработает на смартфонах и планшетах */
-@media (max-width: 750px) {
-
-  /* 1. ВОЗВРАЩАЕМ ЯНТАРНОЕ СВЕЧЕНИЕ (но делаем его адаптивным для мобилок) */
+  /* 1. Настраиваем фон со свечением под узкие экраны */
   body {
     background:
-      radial-gradient(circle at 50% 15%, rgba(214, 155, 45, 0.15), transparent 60%), /* Свечение сверху по центру */
-      radial-gradient(circle at 10% 85%, rgba(214, 155, 45, 0.06), transparent 50%),  /* Мягкий блик снизу */
+      radial-gradient(circle at 50% 15%, rgba(214, 155, 45, 0.15), transparent 60%), 
+      radial-gradient(circle at 10% 85%, rgba(214, 155, 45, 0.06), transparent 50%),  
       linear-gradient(135deg, #020203 0%, #090b0f 55%, #050607 100%) !important;
-    background-attachment: fixed !important; /* Важно: фон зафиксирован, он не будет ломаться при скролле! */
+    background-attachment: fixed !important; /* Фиксируем, чтобы не ломался при скролле */
   }
   
-  /* Возвращаем круговую маску для сетки, чтобы она красиво затухала */
   body::before {
     background-size: 40px 40px !important; 
-    mask-image: radial-gradient(circle at center, black 20%, transparent 85%) !important; /* Сетка мягко исчезает к краям */
+    mask-image: radial-gradient(circle at center, black 20%, transparent 85%) !important;
     -webkit-mask-image: radial-gradient(circle at center, black 20%, transparent 85%) !important;
   }
 
-  /* 2. Разрешаем главной оболочке экрана расти вниз */
+  /* 2. Разрешаем главному экрану расти вниз */
   .intro-screen {
     height: auto !important;
     overflow: visible !important;
@@ -180,25 +180,59 @@ body::before {
     align-items: center !important;
   }
 
-  /* 3. Освобождаем саму карточку-рамку */
+  /* 3. Делаем саму карточку-рамку адаптивной по высоте */
   .mission-card {
     height: auto !important;
-    overflow: hidden !important; 
-    padding: 30px 16px !important;
+    overflow: hidden !important; /* Чтобы RFIS красиво срезался внутренними краями */
+    padding: 40px 20px !important;
     width: calc(100% - 16px) !important; 
     margin: 0 auto !important;
   }
   
-  /* 4. Укрощаем гигантский текст RFIS, чтобы он не вылезал за границы */
-  /* 4. Возвращаем крупный водяной знак RFIS на телефонах */
+  /* 4. Аккуратный водяной знак RFIS для узких экранов */
   .mission-card::after {
-    font-size: 9rem !important;    /* Сделай 9rem или 10rem — он снова станет большим и эпичным! */
-    line-height: 1 !important;     /* Схлопывает лишние скрытые отступы вокруг букв */
-    right: -10px !important;       /* Можно слегка выпустить его за правый край, как на десктопе */
-    bottom: -15px !important;      /* И притопить пониже, чтобы он красиво срезался рамкой */
+    font-size: clamp(6rem, 16vw, 9rem) !important; 
+    line-height: 1 !important;
+    right: -10px !important; 
+    bottom: -15px !important;
   }
   
+  /* Убираем десктопный сдвиг контента вверх */
   .intro-content {
     transform: translateY(0) !important;
+    width: min(600px, 95%) !important;
+  }
+}
+
+/* ==========================================================================
+   БЛОК 2: Спасаем ГОРИЗОНТАЛЬНЫЕ планшеты и низкие мониторы
+   Сработает, только если экран широкий (десктопный), но очень низкий по высоте
+   ========================================================================== */
+@media (max-height: 780px) and (min-width: 1025px) {
+  
+  .intro-screen {
+    height: auto !important;
+    overflow: visible !important;
+    padding: 30px 0 !important;
+  }
+
+  .mission-card {
+    height: auto !important;
+    min-height: calc(100vh - 60px) !important;
+    padding: 34px 40px !important;
+  }
+
+  /* Чуть уменьшаем гигантский заголовок h1, чтобы сберечь высоту */
+  .intro-content h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem) !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* Слегка прижимаем отступы */
+  .intro-label {
+    margin-bottom: 15px !important;
+  }
+  .button {
+    margin-top: 20px !important;
   }
 }

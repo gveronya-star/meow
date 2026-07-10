@@ -764,17 +764,19 @@ footer {
 
 
 }
-/* Этот блок сработает ТОЛЬКО на телефонах и планшетах */
-@media (max-width: 768px) {
+
+@media (max-width: 750px) {
   
-  .your-frame-class { /* Переименуй в класс своей рамки (например, .card или .window) */
-    height: auto !important;        /* Разрешаем рамке расти вниз */
-    overflow: visible !important;   /* Включаем видимость! Текст больше не будет резаться */
-    
-    /* Дополнительно: чтобы на узком экране телефона всё смотрелось аккуратно */
-    width: calc(100% - 24px);       /* Рамка не вылезает за края экрана */
-    margin: 12px auto;              /* Центрируем её на дисплее */
+  /* Расправляем рамку, чтобы она росла вниз и не прятала текст */
+  .mission-card {
+    height: auto !important;
+    overflow: visible !important;
+    padding: 24px 16px !important;
   }
 
+  /* Разрешаем самой странице скроллиться, если контент длинный */
+  .page-shell {
+    height: auto !important;
+    padding: 24px 0 !important;
+  }
 }
-

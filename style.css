@@ -374,7 +374,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
   border: 1px solid rgba(255,255,255,0.06);
 }*/
 
-.cat-head {
+/*.cat-head {
   position: absolute;
 
   inset: 78px 5px 12px;
@@ -388,6 +388,20 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
     linear-gradient(135deg, #1b2027 0%, #060708 55%, #12161c 100%);
 
   border: 1px solid rgba(255,255,255,0.06);
+}*/
+
+.cat-head {
+  position: absolute;
+  /* Центрируем и делаем круглее: */
+  inset: 78px 15px 12px; 
+  border-radius: 50% 50% 48% 48% / 48% 48% 52% 52%;
+
+  /* Глубокий, дорогой черный цвет шерсти с легким сине-угольным отливом */
+  background: 
+    radial-gradient(circle at 35% 25%, rgba(255,255,255,0.06), transparent 35%),
+    linear-gradient(135deg, #14171d 0%, #040507 60%, #0d1015 100%);
+
+  border: 1px solid rgba(255,255,255,0.04);
 }
 
 
@@ -493,7 +507,11 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 
 .left-eye { left: 65px; }
 .right-eye { right: 65px; }*/
-.eye {
+
+
+
+
+/*.eye {
   position:absolute;
 
   top:105px;
@@ -522,24 +540,60 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 
 .right-eye {
     right:55px;
+}*/
+
+.eye {
+  position: absolute;
+  top: 100px;           /* Чуть приподняли */
+  width: 102px;         /* Сделали шире */
+  height: 102px;        /* Сделали идеально круглыми, как блюдца */
+  border-radius: 50%;
+
+  /* Насыщенный медный/янтарный градиент */
+  background: radial-gradient(circle at 45% 40%, var(--amber-bright) 0%, var(--amber) 50%, var(--amber-dark) 85%);
+  box-shadow: 
+    0 0 25px rgba(214,155,45,.2),
+    inset 0 -8px 12px rgba(0,0,0,.45),
+    inset 0 6px 8px rgba(255,255,255,0.2);
+  transition: box-shadow 250ms ease, filter 250ms ease;
 }
+
+.left-eye { left: 45px; }
+.right-eye { right: 45px; }
+
 
 .eye.is-alert { filter: brightness(1.18); box-shadow: 0 0 42px /* rgba(255, 202, 95, 0.55)*/ rgba(214, 155, 45, 0.55); }
 
 
-.pupil {
+/*.pupil {
   position: absolute;
   left: 50%;
   top: 50%;
-/*  width: 25px;
-  height: 56px;*/
     width:66px;
   height:70px;
   border-radius: 50%;
   background: #050403;
   transform: translate(-50%, -50%);
   transition: transform 60ms linear;
+}*/
+
+/* Кошачьи зрачки-щелочки */
+.pupil {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;          /* Сделали зрачок узким и хищным */
+  height: 75px;         /* Вытянули по вертикали */
+  border-radius: 50%;
+  background: #020202;
+  transform: translate(-50%, -50%);
+  transition: transform 60ms linear, width 200ms ease; /* Плавное расширение */
 }
+
+.eye.is-alert .pupil {
+  width: 38px; /* Зрачок расширяется от удивления/азарта, когда мышь рядом! */
+}
+
 
 .eye-spark {
   position: absolute;
@@ -554,16 +608,18 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 
 
 
-.muzzle, .nose {
+/*.muzzle, .nose {
   z-index:4;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-}
+}*/
 
 /*.muzzle { bottom: 66px; width: 116px; height: 62px; border-radius: 50%; background: rgba(255,255,255,0.035); }
 .nose { bottom: 107px; width: 22px; height: 15px; border-radius: 50% 50% 60% 60%; background: #201311; }*/
-.nose {
+
+
+/*.nose {
  bottom:95px;
 
  width:34px;
@@ -586,6 +642,31 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
  rgba(255,255,255,0.045);
    box-shadow:
  inset 0 -10px 20px rgba(0,0,0,.2);
+}*/
+
+.muzzle {
+  bottom: 45px;
+  width: 165px;
+  height: 70px;
+  border-radius: 45%;
+  
+  /* Рисуем две симметричные припухлости для усов с помощью двойного радиального градиента */
+  background: 
+    radial-gradient(circle at 35% 50%, rgba(255,255,255,0.03) 0%, transparent 55%),
+    radial-gradient(circle at 65% 50%, rgba(255,255,255,0.03) 0%, transparent 55%),
+    linear-gradient(to bottom, #11141a, #07080b);
+    
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    0 8px 16px rgba(0,0,0,0.4);
+}
+.nose {
+  bottom: 86px;         /* Опустили ровно в ложбинку щек */
+  width: 26px;          /* Сделали чуть аккуратнее */
+  height: 18px;
+  border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%; /* Форма мягкого треугольника */
+  background: #160f0e;  /* Бархатный темно-серый, почти черный нос */
+  box-shadow: inset 0 2px 3px rgba(0,0,0,0.6), 0 1px 1px rgba(255,255,255,0.1);
 }
 
 

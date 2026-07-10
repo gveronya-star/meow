@@ -404,8 +404,9 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 
 
 .secret-message {
-  position: absolute;
-  bottom: -20px;
+  position: relative /*absolute*/;
+ /* bottom: -20px;*/
+  top: -20%;
   width: min(340px, 90%);
   padding: 16px 18px;
   border: 1px solid rgba(214,155,45,0.35);

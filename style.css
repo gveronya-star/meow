@@ -422,7 +422,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
     100% 85%,
     50% 72%,
     0% 85%
-}
+});
 
 .left-ear {
  left:42px;

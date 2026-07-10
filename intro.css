@@ -184,7 +184,7 @@ body::before {
 
   /* 3. ИСПРАВЛЕНИЕ: Карточка теперь идеально сжимается и на iPad, и на телефонах */
   .mission-card {
-    width: 100% !important; /* <--- Больше никаких calc(), она просто займет всю доступную ширину родителя */
+    width: calc(100% - 32px) !important; /* <--- Больше никаких calc(), она просто займет всю доступную ширину родителя */
     max-width: 640px !important; /* <--- На планшетах она не будет растягиваться на весь экран, а аккуратно соберется по центру */
     height: auto !important;
     overflow: hidden !important; 
@@ -211,31 +211,34 @@ body::before {
    БЛОК 2: Спасаем ГОРИЗОНТАЛЬНЫЕ планшеты и низкие мониторы
    Сработает, только если экран широкий (десктопный), но очень низкий по высоте
    ========================================================================== */
+/* ==========================================================================
+   БЛОК 2: Спасаем ГОРИЗОНТАЛЬНЫЕ планшеты и низкие мониторы
+   ========================================================================== */
 @media (max-height: 780px) and (min-width: 1025px) {
-  
-  .intro-screen {
-    height: auto !important;
-    overflow: visible !important;
-    padding: 30px 0 !important;
+
+  /* Убираем десктопный сдвиг вверх, который выталкивал контент за рамку */
+  .intro-content {
+    transform: translateY(0) !important;
+    width: min(600px, 90%) !important;
   }
 
-  .mission-card {
-    height: auto !important;
-    min-height: calc(100vh - 60px) !important;
-    padding: 34px 40px !important;
-  }
-
-  /* Чуть уменьшаем гигантский заголовок h1, чтобы сберечь высоту */
+  /* Уменьшаем огромные десктопные отступы, чтобы флексбокс карточки 
+     мог спокойно ужать контент внутри твоих 80% высоты */
   .intro-content h1 {
-    font-size: clamp(2rem, 4vw, 3.2rem) !important;
-    margin-bottom: 16px !important;
+    font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
+    margin-bottom: 12px !important;
   }
 
-  /* Слегка прижимаем отступы */
   .intro-label {
-    margin-bottom: 15px !important;
+    margin-bottom: 12px !important;
   }
+
   .button {
+    margin-top: 15px !important;
+    padding: 12px 26px !important; /* Чуть компактнее кнопка */
+  }
+
+  .tiny-secret {
     margin-top: 20px !important;
   }
 }

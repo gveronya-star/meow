@@ -150,7 +150,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
   
   font-size: clamp(1rem, 1.6vmin, 1.12rem);
   
-  line-height: 1.75;
+  line-height: clamp(1.3rem, 2.5vmin, 2rem); /*1.75*/;
 }
 
 

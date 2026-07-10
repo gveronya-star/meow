@@ -781,7 +781,7 @@ footer {
   .page-shell,
   .mission-card {
     height: auto !important;
-    overflow: visible !important;
+    overflow: hiddn !important;
     padding: clamp(20px, 4vw, 40px) 16px !important;
   }
 

@@ -190,10 +190,12 @@ body::before {
   }
   
   /* 4. Укрощаем гигантский текст RFIS, чтобы он не вылезал за границы */
+  /* 4. Возвращаем крупный водяной знак RFIS на телефонах */
   .mission-card::after {
-    font-size: 5.5rem !important; 
-    right: 5px !important; 
-    bottom: 5px !important;
+    font-size: 9rem !important;    /* Сделай 9rem или 10rem — он снова станет большим и эпичным! */
+    line-height: 1 !important;     /* Схлопывает лишние скрытые отступы вокруг букв */
+    right: -10px !important;       /* Можно слегка выпустить его за правый край, как на десктопе */
+    bottom: -15px !important;      /* И притопить пониже, чтобы он красиво срезался рамкой */
   }
   
   .intro-content {

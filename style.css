@@ -765,46 +765,72 @@ footer {
 
 }
 
-@media (max-width: 750px) {
+/* ==========================================================================
+   БЛОК 1: Спасаем телефоны и ВЕРТИКАЛЬНЫЕ планшеты (iPad)
+   Сработает на всём, что уже 1024px (как раз ширина вертикального Айпада)
+   ========================================================================== */
+@media (max-width: 1024px) {
   
-  /* Наша карточка растет вниз */
+  /* Разрешаем карточке и странице расти вниз, чтобы текст не обрезался */
+  .page-shell,
   .mission-card {
     height: auto !important;
     overflow: visible !important;
-    padding: 24px 16px !important;
+    padding: clamp(20px, 4vw, 40px) 16px !important;
   }
 
-  /* Оболочка страницы */
-  .page-shell {
-    height: auto !important;
-    padding: 24px 0 !important;
+  /* Схлопываем сетку в ОДНУ колонку: текст сверху, кот снизу */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
   }
 
-  /* ВРУБАЕМ ЦЕНТРИРОВАНИЕ ВСЕГО КОНТЕНТА: */
-  
+  /* Центрируем текст и плашки для аккуратного мобильного вида */
   .copy-panel {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important; /* Центрирует элементы */
-    text-align: center !important;  /* Центрирует сам текст внутри строк */
+    align-items: center !important;
+    text-align: center !important;
   }
 
   .classified-label {
-    margin: 0 auto clamp(16px, 2vmin, 30px) !important; /* Центрируем плашку CLASSIFIED */
+    margin: 0 auto clamp(16px, 2vmin, 30px) !important;
     justify-content: center !important;
   }
 
   .button-row {
-    justify-content: center !important; /* Центрируем кнопки */
+    justify-content: center !important;
     width: 100% !important;
   }
 
-  /* Укрощаем буквы RFIS и на первой странице тоже, чтобы не вылезали */
-  /* 4. Возвращаем крупный водяной знак RFIS на телефонах */
+  /* Уменьшаем буквы RFIS, чтобы они не ломали адаптивность */
   .mission-card::after {
-    font-size: 9rem !important;    /* Сделай 9rem или 10rem — он снова станет большим и эпичным! */
-    line-height: 1 !important;     /* Схлопывает лишние скрытые отступы вокруг букв */
-    right: -10px !important;       /* Можно слегка выпустить его за правый край, как на десктопе */
-    bottom: -15px !important;      /* И притопить пониже, чтобы он красиво срезался рамкой */
+    font-size: clamp(6rem, 15vw, 9rem) !important;
+    line-height: 1 !important;
+    right: -10px !important;
+    bottom: -15px !important;
+  }
+}
+
+/* ==========================================================================
+   БЛОК 2: Спасаем ГОРИЗОНТАЛЬНЫЕ планшеты и низкие ноутбуки
+   Сработает, только если экран широкий, но очень низкий по высоте
+   ========================================================================== */
+@media (max-height: 780px) and (min-width: 1025px) {
+  
+  .page-shell,
+  .mission-card {
+    height: auto !important;
+    min-height: calc(100vh - 40px) !important;
+    padding: 30px 24px !important;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem) !important;
+    margin-bottom: 16px !important;
+  }
+
+  .hero-grid {
+    gap: 24px !important;
   }
 }

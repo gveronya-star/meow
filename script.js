@@ -19,8 +19,8 @@ let statusTimeout;
 const evasiveWarnings = [
   'Are you sure?',
   'Linka is watching.',
-  'This decision will be remembered.'
-  'Do not make a mistake.'
+  'This decision will be remembered.',
+  'Do not make a mistake.',
   'Think again'
 ];
 

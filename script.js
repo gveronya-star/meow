@@ -24,18 +24,18 @@ const evasiveWarnings = [
   'Think again'
 ];
 
-function showStatus(message) {
+function showStatus(message, duration = 1500) { // <-- добавили duration со значением по умолчанию 1500
   statusMessage.innerHTML = message;
 
   statusMessage.classList.remove('active');
   void statusMessage.offsetWidth;
   statusMessage.classList.add('active');
 
-   clearTimeout(statusTimeout);
+  clearTimeout(statusTimeout);
 
-   statusTimeout = setTimeout(() => {
+  statusTimeout = setTimeout(() => {
     statusMessage.classList.remove('active');
-  }, 1500);
+  }, duration); // <-- теперь здесь используется переменная duration, а не жесткие 1500!
 }
 
 function trackPupils(event) {
@@ -136,7 +136,8 @@ primaryButton.addEventListener('click', () => {
 });
 
 secondaryButton.addEventListener('click', () => {
-  showStatus('Mission aborted.<br><br>Linka has noticed your failure.<br><br>Consequences are currently being evaluated.');
+  showStatus('Mission aborted.<br><br>Linka has noticed your failure.<br><br>Consequences are currently being evaluated.', 4000);
+  
 });
 
 function showSecretMessage() {

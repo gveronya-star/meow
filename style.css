@@ -464,7 +464,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
     linear-gradient(145deg, #1d222b, #090b0e 80%);
     
   /* Светлый контур, чтобы уши «оторвались» от темного фона карточки */
-  border: 1px solid rgba(214, 155, 45, 0.3);
+  border: 1px solid rgba(214, 155, 45, 0.03);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   
   transition: transform 300ms ease;

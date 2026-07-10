@@ -39,6 +39,9 @@ function showStatus(message) {
 }
 
 function trackPupils(event) {
+  let isNearAnyPupilZone = false;
+  let isNearAnyEyeZone = false;
+
   eyes.forEach((eye) => {
     const pupil = eye.querySelector('.pupil');
     const rect = eye.getBoundingClientRect();
@@ -47,30 +50,37 @@ function trackPupils(event) {
     const distanceX = event.clientX - eyeCenterX;
     const distanceY = event.clientY - eyeCenterY;
     const angle = Math.atan2(distanceY, distanceX);
-    const distance = Math.min(16, Math.hypot(distanceX, distanceY) / 14);
-
+    
+    // Плавное движение зрачков за курсором
+    const distance = Math.min(10, Math.hypot(distanceX, distanceY) / 20);
     pupil.style.transform = `translate(calc(-50% + ${Math.cos(angle) * distance}px), calc(-50% + ${Math.sin(angle) * distance}px))`;
 
-// 1. Проверяем расстояние для зрачков (дальний радиус)
-    const nearPupil = Math.hypot(distanceX, distanceY) < 280;
-    if (nearPupil) {
-      eye.classList.add('expand-pupil'); // Добавляем новый класс только для зрачков
-    } else {
-      eye.classList.remove('expand-pupil');
+    // Запоминаем, если курсор вошел в зону расширения зрачков (280px)
+    if (Math.hypot(distanceX, distanceY) < 280) {
+      isNearAnyPupilZone = true;
     }
-
-    // 2. Проверяем расстояние для свечения и сообщения (ближний радиус)
-    const nearEye = Math.hypot(distanceX, distanceY) < 140;
-    if (nearEye) {
-      eyes.forEach((e) => e.classList.add('is-alert'));
-      secretMessage.classList.add('visible');
-    } else {
-      eyes.forEach((e) => e.classList.remove('is-alert'));
-      secretMessage.classList.remove('visible');
-    }
-
     
+    // Запоминаем, если курсор вошел в зону свечения (140px)
+    if (Math.hypot(distanceX, distanceY) < 140) {
+      isNearAnyEyeZone = true;
+    }
   });
+
+  // ЭТАП 1: Синхронно управляем зрачками ОБОИХ глаз сразу
+  if (isNearAnyPupilZone) {
+    eyes.forEach((e) => e.classList.add('expand-pupil'));
+  } else {
+    eyes.forEach((e) => e.classList.remove('expand-pupil'));
+  }
+
+  // ЭТАП 2: Синхронно включаем свечение и секретное сообщение
+  if (isNearAnyEyeZone) {
+    eyes.forEach((e) => e.classList.add('is-alert'));
+    secretMessage.classList.add('visible');
+  } else {
+    eyes.forEach((e) => e.classList.remove('is-alert'));
+    secretMessage.classList.remove('visible');
+  }
 }
 
 function moveEvasiveButton() {

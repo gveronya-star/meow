@@ -324,6 +324,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 
   display: grid;
   place-items: center;
+  margin-top: -40px;
 }
 
 .cat-orbit {

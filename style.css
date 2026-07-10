@@ -240,12 +240,12 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 
 .mission-button {
   border: 0;
-  border-radius: 14px;
-  padding: 14px 20px;
+  border-radius: 18px;
+  padding: 16px 24px;
   cursor: pointer;
   font: inherit;
   font-weight: 800;
-  font-size: 0.9rem;
+  
   transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
 }
 
@@ -259,7 +259,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 
 .evasive-button {
   position: relative;
-  min-width: 200px;
+  min-width: 240px;
   white-space: nowrap;
   color: #e5dccb;
   background: rgba(8, 10, 13, 0.60);
@@ -300,8 +300,8 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 }
 
 .button-placeholder {
-  width: 200px;
-  height: 50px;
+  width: 260px;
+  height: 60px;
 }
 
 
@@ -334,12 +334,10 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 
 .cat-face {
   position: absolute;
- /* width: min(78vw, 360px);
-  height: 390px;*/
+  width: min(78vw, 360px);
+  height: 390px;
 
-  width: min(65vw, 300px);
-  aspect-ratio: 360 / 390;
-  height: auto;
+transform: scale(0.83);
   
   filter: drop-shadow(0 30px 46px rgba(0,0,0,0.78));
   animation: royalFloat 5s ease-in-out infinite;
@@ -433,7 +431,7 @@ margin: 0 0 clamp(14px, 2vmin, 24px);
 .secret-message {
   position: absolute;
 /*  bottom: 10%;*/
-  top: -35%;
+  top: -20%;
   width: min(340px, 90%);
   padding: 16px 18px;
   border: 1px solid rgba(214,155,45,0.35);
